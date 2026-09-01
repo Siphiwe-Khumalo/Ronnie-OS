@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import LogPage from './pages/LogPage'
 import TodayPage from './pages/TodayPage'
+import VoicePage from './pages/VoicePage'
 
-type Screen = 'today' | 'log'
+type Screen = 'today' | 'log' | 'voice'
 
 const navigation: { id: Screen; label: string; icon: string }[] = [
   { id: 'today', label: 'Today', icon: '⌂' },
+  { id: 'voice', label: 'Voice', icon: '◉' },
   { id: 'log', label: 'Log', icon: '≡' },
 ]
 
@@ -56,6 +58,8 @@ function App() {
         <main className="flex-1 pb-28 pt-8 sm:pt-12 lg:pb-10 lg:pt-20">
           {screen === 'today' ? (
             <TodayPage />
+          ) : screen === 'voice' ? (
+            <VoicePage />
           ) : (
             <LogPage />
           )}
