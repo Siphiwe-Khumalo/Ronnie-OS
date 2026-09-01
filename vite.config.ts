@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
+    allowedHosts: ['bluetooth-appreciate-hiring-played.trycloudflare.com'],
     proxy: {
       '/api': 'http://127.0.0.1:8787',
     },
